@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = com.crepo.reports.\
+    config.SqlTestContainersSpringContextCustomizerFactory
