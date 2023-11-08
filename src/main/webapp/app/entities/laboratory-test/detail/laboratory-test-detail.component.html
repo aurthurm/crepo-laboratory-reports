@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="laboratoryTest">
+      <h2 data-cy="laboratoryTestDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.laboratoryTest.detail.title">Laboratory Test</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryTest.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryTest.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryTest.testId">Test Id</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.testId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryTest.test">Test</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.test }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryTest.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryTest.department">Department</span></dt>
+        <dd>
+          <span>{{ laboratoryTest.department }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/laboratory-test', laboratoryTest.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

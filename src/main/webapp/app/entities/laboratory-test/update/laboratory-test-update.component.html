@@ -1,0 +1,115 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-laboratory-test-heading"
+        data-cy="LaboratoryTestCreateUpdateHeading"
+        jhiTranslate="cRepoExtensioApp.laboratoryTest.home.createOrEditLabel"
+      >
+        Create or edit a Laboratory Test
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.laboratoryTest.laboratoryId" for="field_laboratoryId"
+            >Laboratory Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratoryId"
+            id="field_laboratoryId"
+            data-cy="laboratoryId"
+            formControlName="laboratoryId"
+          />
+          <div
+            *ngIf="editForm.get('laboratoryId')!.invalid && (editForm.get('laboratoryId')!.dirty || editForm.get('laboratoryId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('laboratoryId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.laboratoryTest.laboratory" for="field_laboratory">Laboratory</label>
+          <input
+            type="text"
+            class="form-control"
+            name="laboratory"
+            id="field_laboratory"
+            data-cy="laboratory"
+            formControlName="laboratory"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.laboratoryTest.testId" for="field_testId">Test Id</label>
+          <input type="text" class="form-control" name="testId" id="field_testId" data-cy="testId" formControlName="testId" />
+          <div *ngIf="editForm.get('testId')!.invalid && (editForm.get('testId')!.dirty || editForm.get('testId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('testId')?.errors?.required" jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.laboratoryTest.test" for="field_test">Test</label>
+          <input type="text" class="form-control" name="test" id="field_test" data-cy="test" formControlName="test" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.laboratoryTest.departmentId" for="field_departmentId"
+            >Department Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="departmentId"
+            id="field_departmentId"
+            data-cy="departmentId"
+            formControlName="departmentId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.laboratoryTest.department" for="field_department">Department</label>
+          <input
+            type="text"
+            class="form-control"
+            name="department"
+            id="field_department"
+            data-cy="department"
+            formControlName="department"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

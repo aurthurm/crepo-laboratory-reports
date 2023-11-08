@@ -7,7 +7,18 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "reportingPeriod": "Reporting Period",
+        "laboratoryTest": "Laboratory Test",
+        "reportTestPeformance": "Report Test Peformance",
+        "laboratoryInstrument": "Laboratory Instrument",
+        "reportInstrumentPerformance": "Report Instrument Performance",
+        "staffCompiment": "Staff Compiment",
+        "stockItem": "Stock Item",
+        "laboratoryStock": "Laboratory Stock",
+        "reportStockOut": "Report Stock Out",
+        "reportActivityUpdate": "Report Activity Update",
+        "reportDiseaseOutbreak": "Report Disease Outbreak"
       },
       "account": {
         "main": "Account",

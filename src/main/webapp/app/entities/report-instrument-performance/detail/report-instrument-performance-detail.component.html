@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reportInstrumentPerformance">
+      <h2 data-cy="reportInstrumentPerformanceDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.detail.title">Report Instrument Performance</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.department">Department</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.department }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.instrumentId">Instrument Id</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.instrumentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.instrument">Instrument</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.instrument }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.status">Status</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.uptime">Uptime</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.uptime }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.downtime">Downtime</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.downtime }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.serviceStatus">Service Status</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.serviceStatus }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.caliberationStatus">Caliberation Status</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.caliberationStatus }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.functionality">Functionality</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cRepoExtensioApp.InstrumentFunctionality.' + reportInstrumentPerformance.functionality }}">{{
+            reportInstrumentPerformance.functionality
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.comment">Comment</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.comment }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.reportingPeriodId">Reporting Period Id</span></dt>
+        <dd>
+          <span>{{ reportInstrumentPerformance.reportingPeriodId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button
+        type="button"
+        [routerLink]="['/report-instrument-performance', reportInstrumentPerformance.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

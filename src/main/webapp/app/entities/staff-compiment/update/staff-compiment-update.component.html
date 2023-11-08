@@ -1,0 +1,212 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-staff-compiment-heading"
+        data-cy="StaffCompimentCreateUpdateHeading"
+        jhiTranslate="cRepoExtensioApp.staffCompiment.home.createOrEditLabel"
+      >
+        Create or edit a Staff Compiment
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.laboratoryId" for="field_laboratoryId"
+            >Laboratory Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratoryId"
+            id="field_laboratoryId"
+            data-cy="laboratoryId"
+            formControlName="laboratoryId"
+          />
+          <div
+            *ngIf="editForm.get('laboratoryId')!.invalid && (editForm.get('laboratoryId')!.dirty || editForm.get('laboratoryId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('laboratoryId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.laboratory" for="field_laboratory">Laboratory</label>
+          <input
+            type="text"
+            class="form-control"
+            name="laboratory"
+            id="field_laboratory"
+            data-cy="laboratory"
+            formControlName="laboratory"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.departmentId" for="field_departmentId"
+            >Department Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="departmentId"
+            id="field_departmentId"
+            data-cy="departmentId"
+            formControlName="departmentId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.department" for="field_department">Department</label>
+          <input
+            type="text"
+            class="form-control"
+            name="department"
+            id="field_department"
+            data-cy="department"
+            formControlName="department"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.scientistAvailable" for="field_scientistAvailable"
+            >Scientist Available</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="scientistAvailable"
+            id="field_scientistAvailable"
+            data-cy="scientistAvailable"
+            formControlName="scientistAvailable"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.scientistRequired" for="field_scientistRequired"
+            >Scientist Required</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="scientistRequired"
+            id="field_scientistRequired"
+            data-cy="scientistRequired"
+            formControlName="scientistRequired"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.microscopitsAvailable" for="field_microscopitsAvailable"
+            >Microscopits Available</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="microscopitsAvailable"
+            id="field_microscopitsAvailable"
+            data-cy="microscopitsAvailable"
+            formControlName="microscopitsAvailable"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.microscopitsRequired" for="field_microscopitsRequired"
+            >Microscopits Required</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="microscopitsRequired"
+            id="field_microscopitsRequired"
+            data-cy="microscopitsRequired"
+            formControlName="microscopitsRequired"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.labTechsAvailable" for="field_labTechsAvailable"
+            >Lab Techs Available</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="labTechsAvailable"
+            id="field_labTechsAvailable"
+            data-cy="labTechsAvailable"
+            formControlName="labTechsAvailable"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.labTechsRequired" for="field_labTechsRequired"
+            >Lab Techs Required</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="labTechsRequired"
+            id="field_labTechsRequired"
+            data-cy="labTechsRequired"
+            formControlName="labTechsRequired"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.generalHandsAvailable" for="field_generalHandsAvailable"
+            >General Hands Available</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="generalHandsAvailable"
+            id="field_generalHandsAvailable"
+            data-cy="generalHandsAvailable"
+            formControlName="generalHandsAvailable"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.staffCompiment.generalHandsRequired" for="field_generalHandsRequired"
+            >General Hands Required</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="generalHandsRequired"
+            id="field_generalHandsRequired"
+            data-cy="generalHandsRequired"
+            formControlName="generalHandsRequired"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

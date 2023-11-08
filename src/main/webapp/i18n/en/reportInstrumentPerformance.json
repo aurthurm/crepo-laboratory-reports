@@ -1,0 +1,37 @@
+{
+  "cRepoExtensioApp": {
+    "reportInstrumentPerformance": {
+      "home": {
+        "title": "Report Instrument Performances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Report Instrument Performance",
+        "createOrEditLabel": "Create or edit a Report Instrument Performance",
+        "notFound": "No Report Instrument Performances found"
+      },
+      "created": "A new Report Instrument Performance is created with identifier {{ param }}",
+      "updated": "A Report Instrument Performance is updated with identifier {{ param }}",
+      "deleted": "A Report Instrument Performance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Report Instrument Performance {{ id }}?"
+      },
+      "detail": {
+        "title": "Report Instrument Performance"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "departmentId": "Department Id",
+      "department": "Department",
+      "instrumentId": "Instrument Id",
+      "instrument": "Instrument",
+      "status": "Status",
+      "uptime": "Uptime",
+      "downtime": "Downtime",
+      "serviceStatus": "Service Status",
+      "caliberationStatus": "Caliberation Status",
+      "functionality": "Functionality",
+      "comment": "Comment",
+      "reportingPeriodId": "Reporting Period Id"
+    }
+  }
+}

@@ -1,0 +1,225 @@
+<div>
+  <h2 id="page-heading" data-cy="ReportTestPeformanceHeading">
+    <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.home.title">Report Test Peformances</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-report-test-peformance"
+        [routerLink]="['/report-test-peformance/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.home.createLabel">Create a new Report Test Peformance</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="reportTestPeformances?.length === 0">
+    <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.home.notFound">No Report Test Peformances found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="reportTestPeformances && reportTestPeformances.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="laboratoryId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.laboratoryId">Laboratory Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="laboratory">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.laboratory">Laboratory</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="departmentId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.departmentId">Department Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="department">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.department">Department</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sampleTypeId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.sampleTypeId">Sample Type Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sampleType">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.sampleType">Sample Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="testId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.testId">Test Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="test">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.test">Test</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="turnAroundTime">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.turnAroundTime">Turn Around Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numberTested">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberTested">Number Tested</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numberDispatched">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberDispatched">Number Dispatched</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numberRejected">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberRejected">Number Rejected</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="instrumentId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.instrumentId">Instrument Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="instrument">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.instrument">Instrument</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="criticalResults">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.criticalResults">Critical Results</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numberCritical">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberCritical">Number Critical</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="criticalComment">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.criticalComment">Critical Comment</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="reportingPeriodId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.reportingPeriodId">Reporting Period Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reportTestPeformance of reportTestPeformances; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/report-test-peformance', reportTestPeformance.id, 'view']">{{ reportTestPeformance.id }}</a>
+          </td>
+          <td>{{ reportTestPeformance.laboratoryId }}</td>
+          <td>{{ reportTestPeformance.laboratory }}</td>
+          <td>{{ reportTestPeformance.departmentId }}</td>
+          <td>{{ reportTestPeformance.department }}</td>
+          <td>{{ reportTestPeformance.sampleTypeId }}</td>
+          <td>{{ reportTestPeformance.sampleType }}</td>
+          <td>{{ reportTestPeformance.testId }}</td>
+          <td>{{ reportTestPeformance.test }}</td>
+          <td>{{ reportTestPeformance.turnAroundTime }}</td>
+          <td>{{ reportTestPeformance.numberTested }}</td>
+          <td>{{ reportTestPeformance.numberDispatched }}</td>
+          <td>{{ reportTestPeformance.numberRejected }}</td>
+          <td>{{ reportTestPeformance.instrumentId }}</td>
+          <td>{{ reportTestPeformance.instrument }}</td>
+          <td jhiTranslate="{{ 'cRepoExtensioApp.CriticalResult.' + reportTestPeformance.criticalResults }}">
+            {{ reportTestPeformance.criticalResults }}
+          </td>
+          <td>{{ reportTestPeformance.numberCritical }}</td>
+          <td>{{ reportTestPeformance.criticalComment }}</td>
+          <td>{{ reportTestPeformance.reportingPeriodId }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a
+                [routerLink]="['/report-test-peformance', reportTestPeformance.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a
+                [routerLink]="['/report-test-peformance', reportTestPeformance.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(reportTestPeformance)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="reportTestPeformances && reportTestPeformances.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

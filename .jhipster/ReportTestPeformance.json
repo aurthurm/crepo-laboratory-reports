@@ -1,0 +1,90 @@
+{
+  "applications": "*",
+  "changelogDate": "20231108094805",
+  "entityTableName": "report_test_peformance",
+  "fields": [
+    {
+      "fieldName": "laboratoryId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "laboratory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departmentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sampleTypeId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sampleType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "testId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "test",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "turnAroundTime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberTested",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberDispatched",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberRejected",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instrumentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "instrument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "criticalResults",
+      "fieldType": "CriticalResult",
+      "fieldValues": "YES,NO"
+    },
+    {
+      "fieldName": "numberCritical",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "criticalComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reportingPeriodId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ReportTestPeformance",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

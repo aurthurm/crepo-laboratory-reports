@@ -1,0 +1,32 @@
+{
+  "cRepoExtensioApp": {
+    "reportStockOut": {
+      "home": {
+        "title": "Report Stock Outs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Report Stock Out",
+        "createOrEditLabel": "Create or edit a Report Stock Out",
+        "notFound": "No Report Stock Outs found"
+      },
+      "created": "A new Report Stock Out is created with identifier {{ param }}",
+      "updated": "A Report Stock Out is updated with identifier {{ param }}",
+      "deleted": "A Report Stock Out is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Report Stock Out {{ id }}?"
+      },
+      "detail": {
+        "title": "Report Stock Out"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "stockItemId": "Stock Item Id",
+      "stockItem": "Stock Item",
+      "departmentId": "Department Id",
+      "department": "Department",
+      "available": "Available",
+      "comment": "Comment",
+      "reportingPeriodId": "Reporting Period Id"
+    }
+  }
+}

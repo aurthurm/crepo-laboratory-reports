@@ -1,0 +1,117 @@
+<div>
+  <h2 id="page-heading" data-cy="ReportingPeriodHeading">
+    <span jhiTranslate="cRepoExtensioApp.reportingPeriod.home.title">Reporting Periods</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.reportingPeriod.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-reporting-period"
+        [routerLink]="['/reporting-period/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.reportingPeriod.home.createLabel">Create a new Reporting Period</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="reportingPeriods?.length === 0">
+    <span jhiTranslate="cRepoExtensioApp.reportingPeriod.home.notFound">No Reporting Periods found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="reportingPeriods && reportingPeriods.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="day">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportingPeriod.day">Day</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="week">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportingPeriod.week">Week</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="month">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportingPeriod.month">Month</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="year">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportingPeriod.year">Year</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reportingPeriod of reportingPeriods; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/reporting-period', reportingPeriod.id, 'view']">{{ reportingPeriod.id }}</a>
+          </td>
+          <td>{{ reportingPeriod.day }}</td>
+          <td>{{ reportingPeriod.week }}</td>
+          <td>{{ reportingPeriod.month }}</td>
+          <td>{{ reportingPeriod.year }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/reporting-period', reportingPeriod.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a [routerLink]="['/reporting-period', reportingPeriod.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(reportingPeriod)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="reportingPeriods && reportingPeriods.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

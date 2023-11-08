@@ -1,0 +1,27 @@
+{
+  "cRepoExtensioApp": {
+    "reportingPeriod": {
+      "home": {
+        "title": "Reporting Periods",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reporting Period",
+        "createOrEditLabel": "Create or edit a Reporting Period",
+        "notFound": "No Reporting Periods found"
+      },
+      "created": "A new Reporting Period is created with identifier {{ param }}",
+      "updated": "A Reporting Period is updated with identifier {{ param }}",
+      "deleted": "A Reporting Period is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reporting Period {{ id }}?"
+      },
+      "detail": {
+        "title": "Reporting Period"
+      },
+      "id": "ID",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year"
+    }
+  }
+}

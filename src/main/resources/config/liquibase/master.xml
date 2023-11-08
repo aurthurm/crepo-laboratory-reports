@@ -11,6 +11,17 @@
     <property name="datetimeType" value="datetime" dbms="postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108094605_added_entity_ReportingPeriod.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108094705_added_entity_LaboratoryTest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108094805_added_entity_ReportTestPeformance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108094905_added_entity_LaboratoryInstrument.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095005_added_entity_ReportInstrumentPerformance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095105_added_entity_StaffCompiment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095205_added_entity_StockItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095305_added_entity_LaboratoryStock.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095405_added_entity_ReportStockOut.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095505_added_entity_ReportActivityUpdate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20231108095605_added_entity_ReportDiseaseOutbreak.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->

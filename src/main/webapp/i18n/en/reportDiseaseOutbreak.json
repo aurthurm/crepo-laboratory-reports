@@ -1,0 +1,29 @@
+{
+  "cRepoExtensioApp": {
+    "reportDiseaseOutbreak": {
+      "home": {
+        "title": "Report Disease Outbreaks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Report Disease Outbreak",
+        "createOrEditLabel": "Create or edit a Report Disease Outbreak",
+        "notFound": "No Report Disease Outbreaks found"
+      },
+      "created": "A new Report Disease Outbreak is created with identifier {{ param }}",
+      "updated": "A Report Disease Outbreak is updated with identifier {{ param }}",
+      "deleted": "A Report Disease Outbreak is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Report Disease Outbreak {{ id }}?"
+      },
+      "detail": {
+        "title": "Report Disease Outbreak"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "outbreak": "Outbreak",
+      "disease": "Disease",
+      "comment": "Comment",
+      "reportingPeriodId": "Reporting Period Id"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="laboratoryInstrument">
+      <h2 data-cy="laboratoryInstrumentDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.detail.title">Laboratory Instrument</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.instrumentId">Instrument Id</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.instrumentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.instrument">Instrument</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.instrument }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.laboratoryInstrument.department">Department</span></dt>
+        <dd>
+          <span>{{ laboratoryInstrument.department }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/laboratory-instrument', laboratoryInstrument.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20231108094605",
+  "entityTableName": "reporting_period",
+  "fields": [
+    {
+      "fieldName": "day",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "week",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "month",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ReportingPeriod",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

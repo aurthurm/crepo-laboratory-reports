@@ -1,0 +1,30 @@
+{
+  "cRepoExtensioApp": {
+    "reportActivityUpdate": {
+      "home": {
+        "title": "Report Activity Updates",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Report Activity Update",
+        "createOrEditLabel": "Create or edit a Report Activity Update",
+        "notFound": "No Report Activity Updates found"
+      },
+      "created": "A new Report Activity Update is created with identifier {{ param }}",
+      "updated": "A Report Activity Update is updated with identifier {{ param }}",
+      "deleted": "A Report Activity Update is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Report Activity Update {{ id }}?"
+      },
+      "detail": {
+        "title": "Report Activity Update"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "activity": "Activity",
+      "activityDetails": "Activity Details",
+      "outcomes": "Outcomes",
+      "comments": "Comments",
+      "reportingPeriodId": "Reporting Period Id"
+    }
+  }
+}

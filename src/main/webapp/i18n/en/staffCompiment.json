@@ -1,0 +1,35 @@
+{
+  "cRepoExtensioApp": {
+    "staffCompiment": {
+      "home": {
+        "title": "Staff Compiments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Staff Compiment",
+        "createOrEditLabel": "Create or edit a Staff Compiment",
+        "notFound": "No Staff Compiments found"
+      },
+      "created": "A new Staff Compiment is created with identifier {{ param }}",
+      "updated": "A Staff Compiment is updated with identifier {{ param }}",
+      "deleted": "A Staff Compiment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Staff Compiment {{ id }}?"
+      },
+      "detail": {
+        "title": "Staff Compiment"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "departmentId": "Department Id",
+      "department": "Department",
+      "scientistAvailable": "Scientist Available",
+      "scientistRequired": "Scientist Required",
+      "microscopitsAvailable": "Microscopits Available",
+      "microscopitsRequired": "Microscopits Required",
+      "labTechsAvailable": "Lab Techs Available",
+      "labTechsRequired": "Lab Techs Required",
+      "generalHandsAvailable": "General Hands Available",
+      "generalHandsRequired": "General Hands Required"
+    }
+  }
+}

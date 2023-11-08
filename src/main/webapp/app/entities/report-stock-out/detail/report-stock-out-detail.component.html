@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reportStockOut">
+      <h2 data-cy="reportStockOutDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.reportStockOut.detail.title">Report Stock Out</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reportStockOut.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ reportStockOut.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ reportStockOut.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.stockItemId">Stock Item Id</span></dt>
+        <dd>
+          <span>{{ reportStockOut.stockItemId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.stockItem">Stock Item</span></dt>
+        <dd>
+          <span>{{ reportStockOut.stockItem }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ reportStockOut.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.department">Department</span></dt>
+        <dd>
+          <span>{{ reportStockOut.department }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.available">Available</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cRepoExtensioApp.StockAvailability.' + reportStockOut.available }}">{{ reportStockOut.available }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.comment">Comment</span></dt>
+        <dd>
+          <span>{{ reportStockOut.comment }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportStockOut.reportingPeriodId">Reporting Period Id</span></dt>
+        <dd>
+          <span>{{ reportStockOut.reportingPeriodId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/report-stock-out', reportStockOut.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
