@@ -66,14 +66,14 @@ entity StaffCompiment {
     laboratory String
 	departmentId String
     department String
-    scientistAvailable Number
-    scientistRequired Number
-    microscopitsAvailable Number
-    microscopitsRequired Number
-    labTechsAvailable Number
-    labTechsRequired Number
-    generalHandsAvailable Number
-    generalHandsRequired Number
+    scientistAvailable Long
+    scientistRequired Long
+    microscopitsAvailable Long
+    microscopitsRequired Long
+    labTechsAvailable Long
+    labTechsRequired Long
+    generalHandsAvailable Long
+    generalHandsRequired Long
 }
 
 entity StockItem {
