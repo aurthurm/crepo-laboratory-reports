@@ -1,0 +1,147 @@
+entity ReportingPeriod {
+	day Integer
+    week Integer
+    month String required
+    year Integer required
+}
+
+entity LaboratoryTest {
+	laboratoryId String required
+    laboratory String 
+    testId String required
+    test String
+	departmentId String
+    department String
+}
+
+entity ReportTestPeformance {
+	laboratoryId String required
+	laboratory String
+    departmentId String
+    department String
+    sampleTypeId String required
+    sampleType String
+    testId String required
+    test String
+    turnAroundTime String
+    numberTested String
+    numberDispatched String
+    numberRejected String
+    instrumentId String required
+    instrument String
+    criticalResults CriticalResult
+    numberCritical String
+    criticalComment String
+    reportingPeriodId String required
+}
+
+entity LaboratoryInstrument {
+	laboratoryId String required
+    laboratory String
+    instrumentId String required
+    instrument String
+	departmentId String
+    department String
+}
+
+entity ReportInstrumentPerformance {
+	laboratoryId String required
+    laboratory String
+	departmentId String 
+    department String
+    instrumentId String required
+    instrument String
+    status String
+    uptime String
+    downtime String
+    serviceStatus String
+    caliberationStatus String
+    functionality InstrumentFunctionality
+    comment String
+    reportingPeriodId String required
+}
+
+entity StaffCompiment {
+	laboratoryId String required
+    laboratory String
+	departmentId String
+    department String
+    scientistAvailable Number
+    scientistRequired Number
+    microscopitsAvailable Number
+    microscopitsRequired Number
+    labTechsAvailable Number
+    labTechsRequired Number
+    generalHandsAvailable Number
+    generalHandsRequired Number
+}
+
+entity StockItem {
+	name String required
+    description String
+}
+
+entity LaboratoryStock {
+    laboratoryId String required
+    laboratory String
+	stockItemId String required
+    stockItem String
+	departmentId String
+    department String
+}
+
+entity ReportStockOut {
+	laboratoryId String required
+    laboratory String
+	stockItemId String required
+    stockItem String
+	departmentId String
+    department String
+    available StockAvailability
+    comment String
+    reportingPeriodId String required
+}
+
+entity ReportActivityUpdate {
+	laboratoryId String required
+    laboratory String
+    activity String
+    activityDetails String
+    outcomes String
+    comments String
+    reportingPeriodId String required
+}
+
+entity ReportDiseaseOutbreak {
+	laboratoryId String required
+    laboratory String
+    outbreak Outbreak
+    disease String
+    comment String
+    reportingPeriodId String required
+}
+
+enum CriticalResult {
+    YES, NO
+}
+
+enum Outbreak {
+    YES, NO
+}
+
+enum InstrumentFunctionality {
+    YES, NO
+}
+
+enum StockAvailability {
+    AVAILABLE, NOT_AVAILABLE
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with no
+
+// Set service options to all
+service all with serviceImpl
