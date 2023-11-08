@@ -1,0 +1,324 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-report-test-peformance-heading"
+        data-cy="ReportTestPeformanceCreateUpdateHeading"
+        jhiTranslate="cRepoExtensioApp.reportTestPeformance.home.createOrEditLabel"
+      >
+        Create or edit a Report Test Peformance
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.laboratoryId" for="field_laboratoryId"
+            >Laboratory Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratoryId"
+            id="field_laboratoryId"
+            data-cy="laboratoryId"
+            formControlName="laboratoryId"
+          />
+          <div
+            *ngIf="editForm.get('laboratoryId')!.invalid && (editForm.get('laboratoryId')!.dirty || editForm.get('laboratoryId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('laboratoryId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.laboratory" for="field_laboratory"
+            >Laboratory</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratory"
+            id="field_laboratory"
+            data-cy="laboratory"
+            formControlName="laboratory"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.departmentId" for="field_departmentId"
+            >Department Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="departmentId"
+            id="field_departmentId"
+            data-cy="departmentId"
+            formControlName="departmentId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.department" for="field_department"
+            >Department</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="department"
+            id="field_department"
+            data-cy="department"
+            formControlName="department"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.sampleTypeId" for="field_sampleTypeId"
+            >Sample Type Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sampleTypeId"
+            id="field_sampleTypeId"
+            data-cy="sampleTypeId"
+            formControlName="sampleTypeId"
+          />
+          <div
+            *ngIf="editForm.get('sampleTypeId')!.invalid && (editForm.get('sampleTypeId')!.dirty || editForm.get('sampleTypeId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('sampleTypeId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.sampleType" for="field_sampleType"
+            >Sample Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sampleType"
+            id="field_sampleType"
+            data-cy="sampleType"
+            formControlName="sampleType"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.testId" for="field_testId">Test Id</label>
+          <input type="text" class="form-control" name="testId" id="field_testId" data-cy="testId" formControlName="testId" />
+          <div *ngIf="editForm.get('testId')!.invalid && (editForm.get('testId')!.dirty || editForm.get('testId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('testId')?.errors?.required" jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.test" for="field_test">Test</label>
+          <input type="text" class="form-control" name="test" id="field_test" data-cy="test" formControlName="test" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.turnAroundTime" for="field_turnAroundTime"
+            >Turn Around Time</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="turnAroundTime"
+            id="field_turnAroundTime"
+            data-cy="turnAroundTime"
+            formControlName="turnAroundTime"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberTested" for="field_numberTested"
+            >Number Tested</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="numberTested"
+            id="field_numberTested"
+            data-cy="numberTested"
+            formControlName="numberTested"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberDispatched" for="field_numberDispatched"
+            >Number Dispatched</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="numberDispatched"
+            id="field_numberDispatched"
+            data-cy="numberDispatched"
+            formControlName="numberDispatched"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberRejected" for="field_numberRejected"
+            >Number Rejected</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="numberRejected"
+            id="field_numberRejected"
+            data-cy="numberRejected"
+            formControlName="numberRejected"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.instrumentId" for="field_instrumentId"
+            >Instrument Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="instrumentId"
+            id="field_instrumentId"
+            data-cy="instrumentId"
+            formControlName="instrumentId"
+          />
+          <div
+            *ngIf="editForm.get('instrumentId')!.invalid && (editForm.get('instrumentId')!.dirty || editForm.get('instrumentId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('instrumentId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.instrument" for="field_instrument"
+            >Instrument</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="instrument"
+            id="field_instrument"
+            data-cy="instrument"
+            formControlName="instrument"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.criticalResults" for="field_criticalResults"
+            >Critical Results</label
+          >
+          <select
+            class="form-control"
+            name="criticalResults"
+            formControlName="criticalResults"
+            id="field_criticalResults"
+            data-cy="criticalResults"
+          >
+            <option [ngValue]="null">{{ 'cRepoExtensioApp.CriticalResult.null' | translate }}</option>
+            <option *ngFor="let criticalResult of criticalResultValues" [value]="criticalResult">
+              {{ 'cRepoExtensioApp.CriticalResult.' + criticalResult | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberCritical" for="field_numberCritical"
+            >Number Critical</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="numberCritical"
+            id="field_numberCritical"
+            data-cy="numberCritical"
+            formControlName="numberCritical"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.criticalComment" for="field_criticalComment"
+            >Critical Comment</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="criticalComment"
+            id="field_criticalComment"
+            data-cy="criticalComment"
+            formControlName="criticalComment"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportTestPeformance.reportingPeriodId" for="field_reportingPeriodId"
+            >Reporting Period Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reportingPeriodId"
+            id="field_reportingPeriodId"
+            data-cy="reportingPeriodId"
+            formControlName="reportingPeriodId"
+          />
+          <div
+            *ngIf="
+              editForm.get('reportingPeriodId')!.invalid &&
+              (editForm.get('reportingPeriodId')!.dirty || editForm.get('reportingPeriodId')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('reportingPeriodId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

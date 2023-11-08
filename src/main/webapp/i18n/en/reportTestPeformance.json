@@ -1,0 +1,41 @@
+{
+  "cRepoExtensioApp": {
+    "reportTestPeformance": {
+      "home": {
+        "title": "Report Test Peformances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Report Test Peformance",
+        "createOrEditLabel": "Create or edit a Report Test Peformance",
+        "notFound": "No Report Test Peformances found"
+      },
+      "created": "A new Report Test Peformance is created with identifier {{ param }}",
+      "updated": "A Report Test Peformance is updated with identifier {{ param }}",
+      "deleted": "A Report Test Peformance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Report Test Peformance {{ id }}?"
+      },
+      "detail": {
+        "title": "Report Test Peformance"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "departmentId": "Department Id",
+      "department": "Department",
+      "sampleTypeId": "Sample Type Id",
+      "sampleType": "Sample Type",
+      "testId": "Test Id",
+      "test": "Test",
+      "turnAroundTime": "Turn Around Time",
+      "numberTested": "Number Tested",
+      "numberDispatched": "Number Dispatched",
+      "numberRejected": "Number Rejected",
+      "instrumentId": "Instrument Id",
+      "instrument": "Instrument",
+      "criticalResults": "Critical Results",
+      "numberCritical": "Number Critical",
+      "criticalComment": "Critical Comment",
+      "reportingPeriodId": "Reporting Period Id"
+    }
+  }
+}

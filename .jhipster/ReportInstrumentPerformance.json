@@ -1,0 +1,72 @@
+{
+  "applications": "*",
+  "changelogDate": "20231108095005",
+  "entityTableName": "report_instrument_performance",
+  "fields": [
+    {
+      "fieldName": "laboratoryId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "laboratory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departmentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instrumentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "instrument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uptime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "downtime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serviceStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "caliberationStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "functionality",
+      "fieldType": "InstrumentFunctionality",
+      "fieldValues": "YES,NO"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reportingPeriodId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ReportInstrumentPerformance",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

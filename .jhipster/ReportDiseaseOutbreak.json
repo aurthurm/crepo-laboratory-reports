@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20231108095605",
+  "entityTableName": "report_disease_outbreak",
+  "fields": [
+    {
+      "fieldName": "laboratoryId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "laboratory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "outbreak",
+      "fieldType": "Outbreak",
+      "fieldValues": "YES,NO"
+    },
+    {
+      "fieldName": "disease",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reportingPeriodId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ReportDiseaseOutbreak",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

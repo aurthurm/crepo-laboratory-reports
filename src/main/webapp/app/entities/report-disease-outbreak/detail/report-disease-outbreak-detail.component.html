@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reportDiseaseOutbreak">
+      <h2 data-cy="reportDiseaseOutbreakDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.detail.title">Report Disease Outbreak</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reportDiseaseOutbreak.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ reportDiseaseOutbreak.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ reportDiseaseOutbreak.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.outbreak">Outbreak</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cRepoExtensioApp.Outbreak.' + reportDiseaseOutbreak.outbreak }}">{{
+            reportDiseaseOutbreak.outbreak
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.disease">Disease</span></dt>
+        <dd>
+          <span>{{ reportDiseaseOutbreak.disease }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.comment">Comment</span></dt>
+        <dd>
+          <span>{{ reportDiseaseOutbreak.comment }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.reportingPeriodId">Reporting Period Id</span></dt>
+        <dd>
+          <span>{{ reportDiseaseOutbreak.reportingPeriodId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/report-disease-outbreak', reportDiseaseOutbreak.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

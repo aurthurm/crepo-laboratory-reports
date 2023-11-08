@@ -1,0 +1,29 @@
+{
+  "cRepoExtensioApp": {
+    "laboratoryStock": {
+      "home": {
+        "title": "Laboratory Stocks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Laboratory Stock",
+        "createOrEditLabel": "Create or edit a Laboratory Stock",
+        "notFound": "No Laboratory Stocks found"
+      },
+      "created": "A new Laboratory Stock is created with identifier {{ param }}",
+      "updated": "A Laboratory Stock is updated with identifier {{ param }}",
+      "deleted": "A Laboratory Stock is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Laboratory Stock {{ id }}?"
+      },
+      "detail": {
+        "title": "Laboratory Stock"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "stockItemId": "Stock Item Id",
+      "stockItem": "Stock Item",
+      "departmentId": "Department Id",
+      "department": "Department"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-report-disease-outbreak-heading"
+        data-cy="ReportDiseaseOutbreakCreateUpdateHeading"
+        jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.home.createOrEditLabel"
+      >
+        Create or edit a Report Disease Outbreak
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.laboratoryId" for="field_laboratoryId"
+            >Laboratory Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratoryId"
+            id="field_laboratoryId"
+            data-cy="laboratoryId"
+            formControlName="laboratoryId"
+          />
+          <div
+            *ngIf="editForm.get('laboratoryId')!.invalid && (editForm.get('laboratoryId')!.dirty || editForm.get('laboratoryId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('laboratoryId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.laboratory" for="field_laboratory"
+            >Laboratory</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratory"
+            id="field_laboratory"
+            data-cy="laboratory"
+            formControlName="laboratory"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.outbreak" for="field_outbreak">Outbreak</label>
+          <select class="form-control" name="outbreak" formControlName="outbreak" id="field_outbreak" data-cy="outbreak">
+            <option [ngValue]="null">{{ 'cRepoExtensioApp.Outbreak.null' | translate }}</option>
+            <option *ngFor="let outbreak of outbreakValues" [value]="outbreak">
+              {{ 'cRepoExtensioApp.Outbreak.' + outbreak | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.disease" for="field_disease">Disease</label>
+          <input type="text" class="form-control" name="disease" id="field_disease" data-cy="disease" formControlName="disease" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.comment" for="field_comment">Comment</label>
+          <input type="text" class="form-control" name="comment" id="field_comment" data-cy="comment" formControlName="comment" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportDiseaseOutbreak.reportingPeriodId" for="field_reportingPeriodId"
+            >Reporting Period Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reportingPeriodId"
+            id="field_reportingPeriodId"
+            data-cy="reportingPeriodId"
+            formControlName="reportingPeriodId"
+          />
+          <div
+            *ngIf="
+              editForm.get('reportingPeriodId')!.invalid &&
+              (editForm.get('reportingPeriodId')!.dirty || editForm.get('reportingPeriodId')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('reportingPeriodId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

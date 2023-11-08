@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-report-activity-update-heading"
+        data-cy="ReportActivityUpdateCreateUpdateHeading"
+        jhiTranslate="cRepoExtensioApp.reportActivityUpdate.home.createOrEditLabel"
+      >
+        Create or edit a Report Activity Update
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.laboratoryId" for="field_laboratoryId"
+            >Laboratory Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratoryId"
+            id="field_laboratoryId"
+            data-cy="laboratoryId"
+            formControlName="laboratoryId"
+          />
+          <div
+            *ngIf="editForm.get('laboratoryId')!.invalid && (editForm.get('laboratoryId')!.dirty || editForm.get('laboratoryId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('laboratoryId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.laboratory" for="field_laboratory"
+            >Laboratory</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="laboratory"
+            id="field_laboratory"
+            data-cy="laboratory"
+            formControlName="laboratory"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.activity" for="field_activity">Activity</label>
+          <input type="text" class="form-control" name="activity" id="field_activity" data-cy="activity" formControlName="activity" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.activityDetails" for="field_activityDetails"
+            >Activity Details</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="activityDetails"
+            id="field_activityDetails"
+            data-cy="activityDetails"
+            formControlName="activityDetails"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.outcomes" for="field_outcomes">Outcomes</label>
+          <input type="text" class="form-control" name="outcomes" id="field_outcomes" data-cy="outcomes" formControlName="outcomes" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.comments" for="field_comments">Comments</label>
+          <input type="text" class="form-control" name="comments" id="field_comments" data-cy="comments" formControlName="comments" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="cRepoExtensioApp.reportActivityUpdate.reportingPeriodId" for="field_reportingPeriodId"
+            >Reporting Period Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reportingPeriodId"
+            id="field_reportingPeriodId"
+            data-cy="reportingPeriodId"
+            formControlName="reportingPeriodId"
+          />
+          <div
+            *ngIf="
+              editForm.get('reportingPeriodId')!.invalid &&
+              (editForm.get('reportingPeriodId')!.dirty || editForm.get('reportingPeriodId')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('reportingPeriodId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

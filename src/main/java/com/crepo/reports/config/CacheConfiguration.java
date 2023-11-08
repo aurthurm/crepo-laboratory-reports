@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.crepo.reports.domain.User.class.getName());
             createCache(cm, com.crepo.reports.domain.Authority.class.getName());
             createCache(cm, com.crepo.reports.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.crepo.reports.domain.ReportingPeriod.class.getName());
+            createCache(cm, com.crepo.reports.domain.LaboratoryTest.class.getName());
+            createCache(cm, com.crepo.reports.domain.ReportTestPeformance.class.getName());
+            createCache(cm, com.crepo.reports.domain.LaboratoryInstrument.class.getName());
+            createCache(cm, com.crepo.reports.domain.ReportInstrumentPerformance.class.getName());
+            createCache(cm, com.crepo.reports.domain.StaffCompiment.class.getName());
+            createCache(cm, com.crepo.reports.domain.StockItem.class.getName());
+            createCache(cm, com.crepo.reports.domain.LaboratoryStock.class.getName());
+            createCache(cm, com.crepo.reports.domain.ReportStockOut.class.getName());
+            createCache(cm, com.crepo.reports.domain.ReportActivityUpdate.class.getName());
+            createCache(cm, com.crepo.reports.domain.ReportDiseaseOutbreak.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

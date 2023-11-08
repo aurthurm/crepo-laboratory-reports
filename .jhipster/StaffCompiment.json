@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20231108095105",
+  "entityTableName": "staff_compiment",
+  "fields": [
+    {
+      "fieldName": "laboratoryId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "laboratory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departmentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scientistAvailable",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "scientistRequired",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "microscopitsAvailable",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "microscopitsRequired",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "labTechsAvailable",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "labTechsRequired",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "generalHandsAvailable",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "generalHandsRequired",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "StaffCompiment",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

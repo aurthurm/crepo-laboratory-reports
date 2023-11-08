@@ -1,0 +1,104 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reportTestPeformance">
+      <h2 data-cy="reportTestPeformanceDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.reportTestPeformance.detail.title">Report Test Peformance</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.department">Department</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.department }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.sampleTypeId">Sample Type Id</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.sampleTypeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.sampleType">Sample Type</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.sampleType }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.testId">Test Id</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.testId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.test">Test</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.test }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.turnAroundTime">Turn Around Time</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.turnAroundTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberTested">Number Tested</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.numberTested }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberDispatched">Number Dispatched</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.numberDispatched }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberRejected">Number Rejected</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.numberRejected }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.instrumentId">Instrument Id</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.instrumentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.instrument">Instrument</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.instrument }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.criticalResults">Critical Results</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cRepoExtensioApp.CriticalResult.' + reportTestPeformance.criticalResults }}">{{
+            reportTestPeformance.criticalResults
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.numberCritical">Number Critical</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.numberCritical }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.criticalComment">Critical Comment</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.criticalComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.reportTestPeformance.reportingPeriodId">Reporting Period Id</span></dt>
+        <dd>
+          <span>{{ reportTestPeformance.reportingPeriodId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/report-test-peformance', reportTestPeformance.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

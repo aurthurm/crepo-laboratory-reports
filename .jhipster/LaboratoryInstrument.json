@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20231108094905",
+  "entityTableName": "laboratory_instrument",
+  "fields": [
+    {
+      "fieldName": "laboratoryId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "laboratory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instrumentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "instrument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departmentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "name": "LaboratoryInstrument",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,9 @@
+{
+  "cRepoExtensioApp": {
+    "StockAvailability": {
+      "null": "",
+      "AVAILABLE": "AVAILABLE",
+      "NOT_AVAILABLE": "NOT_AVAILABLE"
+    }
+  }
+}

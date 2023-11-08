@@ -1,0 +1,208 @@
+<div>
+  <h2 id="page-heading" data-cy="ReportInstrumentPerformanceHeading">
+    <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.home.title">Report Instrument Performances</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-report-instrument-performance"
+        [routerLink]="['/report-instrument-performance/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.home.createLabel">Create a new Report Instrument Performance</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="reportInstrumentPerformances?.length === 0">
+    <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.home.notFound">No Report Instrument Performances found</span>
+  </div>
+
+  <div
+    class="table-responsive table-entities"
+    id="entities"
+    *ngIf="reportInstrumentPerformances && reportInstrumentPerformances.length > 0"
+  >
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="laboratoryId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.laboratoryId">Laboratory Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="laboratory">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.laboratory">Laboratory</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="departmentId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.departmentId">Department Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="department">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.department">Department</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="instrumentId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.instrumentId">Instrument Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="instrument">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.instrument">Instrument</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="uptime">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.uptime">Uptime</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="downtime">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.downtime">Downtime</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="serviceStatus">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.serviceStatus">Service Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="caliberationStatus">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.caliberationStatus">Caliberation Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="functionality">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.functionality">Functionality</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="comment">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.comment">Comment</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="reportingPeriodId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.reportInstrumentPerformance.reportingPeriodId">Reporting Period Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reportInstrumentPerformance of reportInstrumentPerformances; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/report-instrument-performance', reportInstrumentPerformance.id, 'view']">{{
+              reportInstrumentPerformance.id
+            }}</a>
+          </td>
+          <td>{{ reportInstrumentPerformance.laboratoryId }}</td>
+          <td>{{ reportInstrumentPerformance.laboratory }}</td>
+          <td>{{ reportInstrumentPerformance.departmentId }}</td>
+          <td>{{ reportInstrumentPerformance.department }}</td>
+          <td>{{ reportInstrumentPerformance.instrumentId }}</td>
+          <td>{{ reportInstrumentPerformance.instrument }}</td>
+          <td>{{ reportInstrumentPerformance.status }}</td>
+          <td>{{ reportInstrumentPerformance.uptime }}</td>
+          <td>{{ reportInstrumentPerformance.downtime }}</td>
+          <td>{{ reportInstrumentPerformance.serviceStatus }}</td>
+          <td>{{ reportInstrumentPerformance.caliberationStatus }}</td>
+          <td jhiTranslate="{{ 'cRepoExtensioApp.InstrumentFunctionality.' + reportInstrumentPerformance.functionality }}">
+            {{ reportInstrumentPerformance.functionality }}
+          </td>
+          <td>{{ reportInstrumentPerformance.comment }}</td>
+          <td>{{ reportInstrumentPerformance.reportingPeriodId }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a
+                [routerLink]="['/report-instrument-performance', reportInstrumentPerformance.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a
+                [routerLink]="['/report-instrument-performance', reportInstrumentPerformance.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button
+                type="submit"
+                (click)="delete(reportInstrumentPerformance)"
+                class="btn btn-danger btn-sm"
+                data-cy="entityDeleteButton"
+              >
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="reportInstrumentPerformances && reportInstrumentPerformances.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

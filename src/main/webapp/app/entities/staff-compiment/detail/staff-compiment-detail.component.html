@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="staffCompiment">
+      <h2 data-cy="staffCompimentDetailsHeading">
+        <span jhiTranslate="cRepoExtensioApp.staffCompiment.detail.title">Staff Compiment</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ staffCompiment.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.laboratoryId">Laboratory Id</span></dt>
+        <dd>
+          <span>{{ staffCompiment.laboratoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.laboratory">Laboratory</span></dt>
+        <dd>
+          <span>{{ staffCompiment.laboratory }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ staffCompiment.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.department">Department</span></dt>
+        <dd>
+          <span>{{ staffCompiment.department }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.scientistAvailable">Scientist Available</span></dt>
+        <dd>
+          <span>{{ staffCompiment.scientistAvailable }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.scientistRequired">Scientist Required</span></dt>
+        <dd>
+          <span>{{ staffCompiment.scientistRequired }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.microscopitsAvailable">Microscopits Available</span></dt>
+        <dd>
+          <span>{{ staffCompiment.microscopitsAvailable }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.microscopitsRequired">Microscopits Required</span></dt>
+        <dd>
+          <span>{{ staffCompiment.microscopitsRequired }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.labTechsAvailable">Lab Techs Available</span></dt>
+        <dd>
+          <span>{{ staffCompiment.labTechsAvailable }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.labTechsRequired">Lab Techs Required</span></dt>
+        <dd>
+          <span>{{ staffCompiment.labTechsRequired }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.generalHandsAvailable">General Hands Available</span></dt>
+        <dd>
+          <span>{{ staffCompiment.generalHandsAvailable }}</span>
+        </dd>
+        <dt><span jhiTranslate="cRepoExtensioApp.staffCompiment.generalHandsRequired">General Hands Required</span></dt>
+        <dd>
+          <span>{{ staffCompiment.generalHandsRequired }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/staff-compiment', staffCompiment.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

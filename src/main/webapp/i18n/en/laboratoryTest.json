@@ -1,0 +1,29 @@
+{
+  "cRepoExtensioApp": {
+    "laboratoryTest": {
+      "home": {
+        "title": "Laboratory Tests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Laboratory Test",
+        "createOrEditLabel": "Create or edit a Laboratory Test",
+        "notFound": "No Laboratory Tests found"
+      },
+      "created": "A new Laboratory Test is created with identifier {{ param }}",
+      "updated": "A Laboratory Test is updated with identifier {{ param }}",
+      "deleted": "A Laboratory Test is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Laboratory Test {{ id }}?"
+      },
+      "detail": {
+        "title": "Laboratory Test"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "testId": "Test Id",
+      "test": "Test",
+      "departmentId": "Department Id",
+      "department": "Department"
+    }
+  }
+}

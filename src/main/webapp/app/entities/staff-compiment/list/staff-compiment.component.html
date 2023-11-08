@@ -1,0 +1,173 @@
+<div>
+  <h2 id="page-heading" data-cy="StaffCompimentHeading">
+    <span jhiTranslate="cRepoExtensioApp.staffCompiment.home.title">Staff Compiments</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.staffCompiment.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-staff-compiment"
+        [routerLink]="['/staff-compiment/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cRepoExtensioApp.staffCompiment.home.createLabel">Create a new Staff Compiment</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="staffCompiments?.length === 0">
+    <span jhiTranslate="cRepoExtensioApp.staffCompiment.home.notFound">No Staff Compiments found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="staffCompiments && staffCompiments.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="laboratoryId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.laboratoryId">Laboratory Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="laboratory">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.laboratory">Laboratory</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="departmentId">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.departmentId">Department Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="department">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.department">Department</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="scientistAvailable">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.scientistAvailable">Scientist Available</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="scientistRequired">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.scientistRequired">Scientist Required</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="microscopitsAvailable">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.microscopitsAvailable">Microscopits Available</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="microscopitsRequired">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.microscopitsRequired">Microscopits Required</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="labTechsAvailable">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.labTechsAvailable">Lab Techs Available</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="labTechsRequired">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.labTechsRequired">Lab Techs Required</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="generalHandsAvailable">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.generalHandsAvailable">General Hands Available</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="generalHandsRequired">
+            <div class="d-flex">
+              <span jhiTranslate="cRepoExtensioApp.staffCompiment.generalHandsRequired">General Hands Required</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let staffCompiment of staffCompiments; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/staff-compiment', staffCompiment.id, 'view']">{{ staffCompiment.id }}</a>
+          </td>
+          <td>{{ staffCompiment.laboratoryId }}</td>
+          <td>{{ staffCompiment.laboratory }}</td>
+          <td>{{ staffCompiment.departmentId }}</td>
+          <td>{{ staffCompiment.department }}</td>
+          <td>{{ staffCompiment.scientistAvailable }}</td>
+          <td>{{ staffCompiment.scientistRequired }}</td>
+          <td>{{ staffCompiment.microscopitsAvailable }}</td>
+          <td>{{ staffCompiment.microscopitsRequired }}</td>
+          <td>{{ staffCompiment.labTechsAvailable }}</td>
+          <td>{{ staffCompiment.labTechsRequired }}</td>
+          <td>{{ staffCompiment.generalHandsAvailable }}</td>
+          <td>{{ staffCompiment.generalHandsRequired }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/staff-compiment', staffCompiment.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a [routerLink]="['/staff-compiment', staffCompiment.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(staffCompiment)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="staffCompiments && staffCompiments.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

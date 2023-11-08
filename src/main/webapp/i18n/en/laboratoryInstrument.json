@@ -1,0 +1,29 @@
+{
+  "cRepoExtensioApp": {
+    "laboratoryInstrument": {
+      "home": {
+        "title": "Laboratory Instruments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Laboratory Instrument",
+        "createOrEditLabel": "Create or edit a Laboratory Instrument",
+        "notFound": "No Laboratory Instruments found"
+      },
+      "created": "A new Laboratory Instrument is created with identifier {{ param }}",
+      "updated": "A Laboratory Instrument is updated with identifier {{ param }}",
+      "deleted": "A Laboratory Instrument is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Laboratory Instrument {{ id }}?"
+      },
+      "detail": {
+        "title": "Laboratory Instrument"
+      },
+      "id": "ID",
+      "laboratoryId": "Laboratory Id",
+      "laboratory": "Laboratory",
+      "instrumentId": "Instrument Id",
+      "instrument": "Instrument",
+      "departmentId": "Department Id",
+      "department": "Department"
+    }
+  }
+}
